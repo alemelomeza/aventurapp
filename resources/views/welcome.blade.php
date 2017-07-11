@@ -80,6 +80,10 @@
             <div class="content">
                 <div class="title m-b-md">
                     AventurApp
+                    <br>
+                    by
+                    <br>
+                    Abnero
                 </div>
 
                 <div class="links">
