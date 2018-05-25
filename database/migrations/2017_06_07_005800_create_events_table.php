@@ -26,14 +26,6 @@ class CreateEventsTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('event_user', function (Blueprint $table) {
-            $table->unsignedInteger('event_id')->index();
-            $table->unsignedInteger('user_id')->index();
-            $table->timestamps();
-
-            $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-        });
     }
 
     /**
@@ -44,6 +36,5 @@ class CreateEventsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('events');
-        Schema::dropIfExists('event_user');
     }
 }

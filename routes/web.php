@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/dashboard', function () {
+    return view('layouts.admin.app');
+});
+
 Route::resource('/users', 'UserController');
 Route::resource('/companies', 'CompanyController');
 Route::resource('/activities', 'ActivityController');
@@ -23,3 +27,5 @@ Route::resource('/events', 'EventController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();

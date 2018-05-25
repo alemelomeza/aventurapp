@@ -25,7 +25,6 @@ class CreateCompaniesTable extends Migration
             $table->string('longitude')->nullable();
             $table->string('logo_path')->nullable();
             $table->string('video_path')->nullable();
-            $table->integer('user_id')->unsigned();
             $table->timestamps();
         });
     }

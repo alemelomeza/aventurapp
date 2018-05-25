@@ -7,13 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Company extends Model
 {
     protected $fillable = [
-        'name', 'user_id',
+        'name','dni','email','password','contact_name','address','latitude','longitude','logo_path','video_path',
     ];
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
 
     public function activities()
     {
