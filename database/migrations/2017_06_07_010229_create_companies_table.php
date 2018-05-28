@@ -18,13 +18,13 @@ class CreateCompaniesTable extends Migration
             $table->string('dni')->nullable();
             $table->string('name');
             $table->string('email');
-            $table->string('password');
             $table->string('contact_name')->nullable();
             $table->string('address')->nullable();
             $table->string('latitude')->nullable();
             $table->string('longitude')->nullable();
             $table->string('logo_path')->nullable();
             $table->string('video_path')->nullable();
+            $table->unsignedInteger('user_id')->nullable();
             $table->timestamps();
         });
     }

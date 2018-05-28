@@ -23,6 +23,9 @@
   <link rel="stylesheet" href="/components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
   <!-- Daterange picker -->
   <link rel="stylesheet" href="/components/bootstrap-daterangepicker/daterangepicker.css">
+
+  <link rel="stylesheet" href="/components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
@@ -83,5 +86,22 @@
 <script src="/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="/js/demo.js"></script>
+<script src="/components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="/components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+
+<script type="text/javascript">
+
+$(function () {
+  $('.datatable').DataTable();
+  $('#example2').DataTable({
+    'paging'      : true,
+    'lengthChange': false,
+    'searching'   : false,
+    'ordering'    : true,
+    'info'        : true,
+    'autoWidth'   : false
+  })
+});
+</script>
 </body>
 </html>

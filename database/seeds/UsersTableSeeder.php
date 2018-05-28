@@ -22,7 +22,7 @@ class UsersTableSeeder extends Seeder
           'role' => 'administrator'
         ],
         [
-          'name' => 'Empresa',
+          'name' => 'Usuario Empresa',
           'dni' => '11111111-1',
           'email' => 'empresa@mail.com',
           'address' => 'San Martin 73',
