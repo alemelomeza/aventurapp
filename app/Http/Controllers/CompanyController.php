@@ -22,7 +22,12 @@ class CompanyController extends Controller
 
     public function store(Request $request)
     {
-        //
+      $this->validate($request, [
+          'name' => 'required',
+          'email' => 'max:50'
+        ]);
+        \App\Company::create($request->all());
+        return redirect('/companies');
     }
 
 
@@ -46,6 +51,7 @@ class CompanyController extends Controller
 
     public function destroy(Company $company)
     {
-        //
+      $company->delete();
+      return redirect('/companies');
     }
 }

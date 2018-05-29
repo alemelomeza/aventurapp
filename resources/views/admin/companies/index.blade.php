@@ -7,8 +7,8 @@
     <small>Gestion & Lista de Empresas</small>
   </h1>
   <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-    <li class="active">Dashboard</li>
+    <li><a href="/home"><i class="fa fa-home"></i> Home</a></li>
+    <li class="active"><i class="fa fa-building"></i>Empresas</li>
   </ol>
 </section>
 
@@ -41,11 +41,11 @@
         @forelse($companies as $company)
         <tr>
           <td>{{ $company->name }}</td>
-          <td>{{ $company->dni }}</td>
+          <td>{{ $company->dni !=null ? $company->dni: ' - '  }}</td>
           <td>{{ $company->email }}</td>
-          <td>{{ $company->contact_name  }}</td>
-          <td>{{ $company->address  }}</td>
-          <td>{{ $company->user->name  }}</td>
+          <td>{{ $company->contact_name !=null ? $company->contact_name: ' - '  }}</td>
+          <td>{{ $company->address !=null ? $company->address: ' - ' }}</td>
+          <td>{{ $company->user_id !=null ? $company->user->name: ' - ' }}</td>
           <td>
             <a class="btn btn-default btn-xs" href="/companies/{{$company->id}}"  title="Ver Detalles" style="float:left;margin-right:5px;">
               <span class="glyphicon glyphicon-eye-open"></span>
