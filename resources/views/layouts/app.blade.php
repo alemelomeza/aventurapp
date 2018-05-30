@@ -29,6 +29,14 @@
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
+  <!-- jQuery 3 -->
+  <script src="/components/jquery/dist/jquery.min.js"></script>
+  <!-- jQuery UI 1.11.4 -->
+  <script src="/components/jquery-ui/jquery-ui.min.js"></script>
+  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+  <script src="/js/crop.js"></script>
+
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -38,6 +46,8 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <link rel="stylesheet" href="/css/cropper.css">
+  <link rel="stylesheet" href="/css/main.css">
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -57,11 +67,7 @@
 </div>
 <!-- ./wrapper -->
 
-<!-- jQuery 3 -->
-<script src="/components/jquery/dist/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="/components/jquery-ui/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+
 <script>
   $.widget.bridge('uibutton', $.ui.button);
 </script>
@@ -83,7 +89,7 @@
 <!-- AdminLTE App -->
 <script src="/js/adminlte.min.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="/js/pages/dashboard.js"></script>
+<!--<script src="/js/pages/dashboard.js"></script>-->
 <!-- AdminLTE for demo purposes -->
 <script src="/js/demo.js"></script>
 <script src="/components/datatables.net/js/jquery.dataTables.min.js"></script>

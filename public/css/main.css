@@ -1,0 +1,29 @@
+.img-container,
+.img-preview {
+  background-color: #f7f7f7;
+  width: 100%;
+  text-align: center;
+}
+
+.img-container {
+  min-height: 100px;
+  max-height: 140px;
+
+}
+
+@media (min-width: 768px) {
+  .img-container {
+    min-height: 200px;
+  }
+}
+
+.img-container > img {
+  max-width: 100%;
+}
+
+.docs-buttons > .btn,
+.docs-buttons > .btn-group,
+.docs-buttons > .form-control {
+  margin-right: .25rem;
+  margin-bottom: .5rem;
+}
