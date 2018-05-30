@@ -11,8 +11,15 @@ class CompaniesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\User::class, 50)->states('company')->create()->each(function ($u) {
-            $u->company()->save(factory(App\Company::class)->make());
-        });
+      \DB::table('companies')->insert([
+        [
+          'name' => 'Empresa 1',
+          'dni' => '33333333-3',
+          'email' => 'empresa_mail@mail.com',
+          'address' => 'San Martin 73',
+          'contact_name' => 'Encargado Empresa',
+          'user_id' => 2
+        ]
+      ]);
     }
 }

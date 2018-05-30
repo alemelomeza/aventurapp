@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'role', 'password',
+        'name', 'email', 'role', 'password','dni','address','phone',
     ];
 
     /**
@@ -40,5 +40,20 @@ class User extends Authenticatable
     public function events()
     {
         return $this->belongsToMany(Event::class);
+    }
+
+    public function isAdmin()
+    {
+      return $this->role == 'administrator' ? true : false;
+    }
+
+    public function isCompany()
+    {
+      return $this->role == 'company' ? true : false;
+    }
+
+    public function isNormal()
+    {
+      return $this->role == 'normal' ? true : false;
     }
 }

@@ -15,7 +15,17 @@ class CreateActivitiesTable extends Migration
     {
         Schema::create('activities', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('title');
+            $table->text('description')->nullable();
+            $table->string('status');
+            $table->text('instructions')->nullable();
+            $table->text('restrictions')->nullable();
+            $table->text('transfers')->nullable();
+            $table->string('cost');
+            $table->string('address')->nullable();
+            $table->string('latitude')->nullable();
+            $table->string('longitude')->nullable();
+            $table->integer('visitcounter')->unsigned();
             $table->integer('company_id')->unsigned();
             $table->timestamps();
         });

@@ -15,10 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/users', 'UserController');
-Route::resource('/companies', 'CompanyController');
-Route::resource('/activities', 'ActivityController');
-Route::resource('/events', 'EventController');
+Route::get('/dashboard', function () {
+    return view('layouts.admin.app');
+});
+
+
 
 Auth::routes();
 
@@ -26,4 +27,24 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' => 'auth'], function () {
+
+
+
+
+    Route::group(['middleware' => 'admin'], function () {
+      Route::resource('/users', 'UserController');
+      Route::resource('/companies', 'CompanyController');
+      Route::resource('/activities', 'ActivityController');
+      Route::resource('/events', 'EventController');
+    });
+
+    Route::group(['middleware' => 'company'], function () {
+
+    });
+
+    Route::group(['middleware' => 'normal_user'], function () {
+
+    });
+
+});
