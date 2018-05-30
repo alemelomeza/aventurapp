@@ -63,14 +63,28 @@
               </div>
           </div>
 
+          <div class="col-md-2">
+              <div class="form-group">
+                <label>Nombre de Contacto</label>
+                <input type="text" class="form-control" name="contact_name" >
+              </div>
+          </div>
+
+          <div class="col-md-2">
+              <div class="form-group">
+                <label>URL Video Youtube <i class="fa fa-youtube-play"></i></label>
+                <input type="text" class="form-control" name="video_path" >
+              </div>
+          </div>
+
           <div class="col-md-4">
-            <label><strong>Crear Foto / Logo *</strong></label><br>
+            <label><strong>Subir & Editar Logo </strong></label><br>
 
             <div class="img-container">
                 <img src="" alt="Editor de Imagen">
             </div>
 
-                <textarea style="display:none;" id="imagen" name="photo" rows="8" cols="80" required></textarea>
+                <textarea style="display:none;" id="imagen" name="photo" rows="8" cols="80"></textarea>
 
             <div class="row" id="actions">
               <div class=" docs-buttons">
@@ -135,7 +149,7 @@
                     </span>
                   </button>
                 </div>
-                
+
                 <div class="modal fade docs-cropped" id="getCroppedCanvasModal" role="dialog" aria-hidden="true" aria-labelledby="getCroppedCanvasTitle" tabindex="-1" style="display:none;">
                 <div class="modal-dialog">
                   <div class="modal-content">
@@ -156,6 +170,15 @@
               <img src="" id="imagen_prev" height="100" alt="Preview Final Imagen">
             </div>
         </div>
+        <div class="col-md-6">
+          <input type="hidden" class="latitude" name="latitude" value="" required>
+           <input type="hidden" class="longitude" name="longitude" value="" required>
+           <div class="col-md-12">
+               <label>Localizacion </label> (Arrastra y suelta la marca)
+               <small><strong id="latitude_show">-39.81877155114882</strong> , <strong id="longitude_show">-73.24897170066835</strong></small>
+               <div id="divMap" style="width:100%;height:200px;box-shadow: 5px 5px 5px #888;margin-bottom:20px;"></div>
+           </div>
+        </div>
 
           <div class="col-md-2" style="float:right;">
              <button type="submit" class="form-control btn btn-primary" >
@@ -171,4 +194,32 @@
 </section>
 
 <script src="/js/main.js"></script>
+<script type="text/javascript">
+map = new L.map('divMap');
+
+  // create the tile layer with correct attribution
+  //var osmUrl='http://korona.geog.uni-heidelberg.de/tiles/roads/x={x}&y={y}&z={z}';
+  var osmUrl='http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png';
+  var osmAttrib='Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
+  var osm = new L.TileLayer(osmUrl, {minZoom: 1, maxZoom: 20, attribution: osmAttrib});
+
+  // start the map in South-East England
+  map.setView(new L.LatLng(-33.44060944370357,-70.64758300781251),5);
+  map.addLayer(osm);
+  var marker = L.marker([-33.44060944370357,-70.64758300781251],{draggable: true}).addTo(map).bindPopup('Aqui Estas!').openPopup();
+  var popup = L.popup();
+
+  marker.on("dragend", function(ev) {
+    var chagedPos = ev.target.getLatLng();
+    //this.bindPopup(chagedPos.toString()).openPopup();
+    this.bindPopup('Aqui Estas!').openPopup();
+    $('.latitude').val(chagedPos.lat);
+    $('#latitude_show').html(chagedPos.lat);
+    $('.longitude').val(chagedPos.lng);
+    $('#longitude_show').html(chagedPos.lng);
+  });
+
+
+</script>
+
 @endsection

@@ -40,7 +40,17 @@
           <td>{{ $user->name }}</td>
           <td>{{ $user->dni }}</td>
           <td>{{ $user->email }}</td>
-          <td>{{ $user->role  }}</td>
+          <td>{{ $user->role  }}
+            @if($user->role == 'company')
+              @if($user->company)
+              - ( <strong>{{$user->company->name}}</strong>  )
+              @else
+              <a class="btn btn-warning btn-xs" href="/users/{{$user->id}}/assing_company"  title="Asignar Empresa" style="">
+                <i class="fa fa-building"></i>
+              </a>
+              @endif
+            @endif
+          </td>
           <td>
             <a class="btn btn-default btn-xs" href="/users/{{$user->id}}"  title="Ver Detalles" style="float:left;margin-right:5px;">
               <span class="glyphicon glyphicon-eye-open"></span>

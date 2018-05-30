@@ -28,6 +28,7 @@
     <table class="datatable table table-striped table-bordered nowrap" cellspacing="0" width="100%">
       <thead>
         <tr>
+          <th>Logo</th>
           <th>Nombre Empresa</th>
           <th>R.U.T</th>
           <th>Email</th>
@@ -40,6 +41,11 @@
       <tbody>
         @forelse($companies as $company)
         <tr>
+          <td>
+            @if($company->logo_path)
+            <img src="{{ $company->logo_path }}" alt="" height=70 >
+            @endif
+          </td>
           <td>{{ $company->name }}</td>
           <td>{{ $company->dni !=null ? $company->dni: ' - '  }}</td>
           <td>{{ $company->email }}</td>
