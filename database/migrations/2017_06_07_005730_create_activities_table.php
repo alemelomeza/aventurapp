@@ -21,7 +21,8 @@ class CreateActivitiesTable extends Migration
             $table->text('instructions')->nullable();
             $table->text('restrictions')->nullable();
             $table->text('transfers')->nullable();
-            $table->string('cost');
+            $table->integer('cost');
+            $table->integer('us_cost');
             $table->string('address')->nullable();
             $table->string('latitude')->nullable();
             $table->string('longitude')->nullable();
