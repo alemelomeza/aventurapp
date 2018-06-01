@@ -40,7 +40,10 @@
   <script src="/js/crop.js"></script>
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+
+  <script src="/components/moment/min/moment-with-locales.min.js"></script>
+  <script src="/components/bootstrap-daterangepicker/daterangepicker.js"></script>
 
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

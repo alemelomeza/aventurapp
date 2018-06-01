@@ -27,8 +27,9 @@ class ActivityController extends Controller
           'status' => 'required',
           'cost' => 'required'
         ]);
+        //dd($request->all());
+        $activity = \App\Activity::create($request->all());
 
-        \App\Activity::create($request->all());
         return redirect('/activities');
     }
 
@@ -61,5 +62,10 @@ class ActivityController extends Controller
         }
         $activity->delete();
         return redirect('/activities');
+    }
+
+    public function adminEvents($id)
+    {
+        return view('admin.activities.events')->with('activity',\App\Activity::find($id));
     }
 }

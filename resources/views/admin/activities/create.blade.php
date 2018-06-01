@@ -33,12 +33,25 @@
     </div>
 @endif
 
-      <form class="form" action="/activities" method="post" enctype="multipart/form-data">
+      <form class="form" action="/activities" method="post">
            {{ csrf_field() }}
-           <div class="col-md-4">
+
+           <div class="col-md-2">
+               <div class="form-group">
+                   <label>Empresa</label>
+                   <select class="region form-control"  name="company_id" required>
+                     @forelse($companies as $company)
+                       <option value="{{ $company->id }}">{{ $company->name }}</option>
+                     @empty
+                     @endforelse
+                   </select>
+               </div>
+           </div>
+
+           <div class="col-md-2">
               <div class="form-group">
                 <label>Titulo de la Actividad*</label>
-                <input type="text" class="form-control" name="title"  minlength="5" maxlength="45" placeholder="Ingresa el titulo de la actividad" required>
+                <input type="text" class="form-control" name="title"  placeholder="Ingresa el titulo de la actividad" required>
               </div>
           </div>
 
@@ -56,10 +69,20 @@
               </div>
           </div>
 
-          <div class="col-md-4">
+          <div class="col-md-2">
               <div class="form-group">
                 <label>Direccion / Ubicacion </label>
                 <input type="text" class="form-control" name="address" >
+              </div>
+          </div>
+
+          <div class="col-md-2">
+              <div class="form-group">
+                  <label>Estado</label>
+                  <select class="region form-control"  name="status" required>
+                      <option value="active">Activo</option>
+                      <option value="inactive">Inactivo</option>
+                  </select>
               </div>
           </div>
 

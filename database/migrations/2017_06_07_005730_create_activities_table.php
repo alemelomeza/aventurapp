@@ -26,7 +26,7 @@ class CreateActivitiesTable extends Migration
             $table->string('address')->nullable();
             $table->string('latitude')->nullable();
             $table->string('longitude')->nullable();
-            $table->integer('visitcounter')->unsigned();
+            $table->integer('visitcounter')->unsigned()->nullable();
             $table->integer('company_id')->unsigned();
             $table->timestamps();
         });

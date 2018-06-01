@@ -31,7 +31,9 @@
           <th>Titulo</th>
           <th>Descripcion</th>
           <th>Estado</th>
-          <th>Costo</th>
+          <th>Costo CL</th>
+          <th>Costo US</th>
+          <th>Eventos</th>
           <th> Acciones </th>
         </tr>
       </thead>
@@ -46,7 +48,13 @@
                 <i class="fa fa-refresh"></i> Cambiar Estado
               </a>
           </td>
+          <td>${{ $activity->cost }}</td>
+          <td>${{ $activity->us_cost }}</td>
+          <td></td>
           <td>
+            <a class="btn btn-warning btn-xs" href="/activities/{{$activity->id}}/events"  title="Gestionar Eventos" style="float:left;margin-right:5px;">
+                <i class="fa fa-calendar"></i>
+            </a>
             <a class="btn btn-default btn-xs" href="/activities/{{$activity->id}}"  title="Ver Detalles" style="float:left;margin-right:5px;">
               <span class="glyphicon glyphicon-eye-open"></span>
             </a>

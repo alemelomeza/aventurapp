@@ -28,12 +28,7 @@
 
           <li class="{{ Request::is('activities*') ? 'active' : ''}}">
             <a href="/activities">
-              <i class="fa fa-map"></i> <span>Actividades</span>
-            </a>
-          </li>
-          <li class="{{ Request::is('events*') ? 'active' : ''}}">
-            <a href="/events">
-              <i class="fa fa-calendar"></i> <span>Eventos</span>
+              <i class="fa fa-map"></i> <span>Actividades & Eventos</span>
             </a>
           </li>
 
@@ -43,15 +38,17 @@
             </a>
           </li>
           <li class="treeview">
-            <a href="#">
-              <i class="fa fa-gears"></i>
-              <span>Mantenedores</span>
-            </a>
-            <ul class="treeview-menu">
-              <li><a href="#"><i class="fa fa-circle-o"></i> Tipo de Turismo</a></li>
-              <li><a href="#"><i class="fa fa-circle-o"></i> Tipo de Actividad</a></li>
-            </ul>
-          </li>
+          <a href="#">
+            <i class="fa fa-gears"></i> <span>Mantenedores</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu" style="">
+            <li><a href="#"><i class="fa fa-circle-o"></i> Tipo de Turismo</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Tipo de Actividad</a></li>
+          </ul>
+        </li>
               @endif
 
           @if(Auth::user()->role =='company')
