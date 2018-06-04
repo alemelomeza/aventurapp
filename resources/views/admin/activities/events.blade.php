@@ -23,11 +23,12 @@
           </ul>
       </div>
       @endif
+<div class="col-md-12">
 
       <form class="form" action="/events" method="post">
            {{ csrf_field() }}
            <input type="hidden" name="activity_id" value="{{ $activity->id}}">
-           <div class="col-md-2">
+           <div class="col-md-3">
               <div class="form-group">
                 <label>Nombre del Evento*</label>
                 <input type="text" class="form-control" name="name" required>
@@ -55,7 +56,7 @@
               </div>
           </div>
 
-          <div class="col-md-2">
+          <div class="col-md-3">
               <div class="form-group">
                 <label>Nombre Lider Encargado</label>
                 <input type="text" class="form-control" name="leader_name" >
@@ -77,6 +78,8 @@
           </div>
       </form>
 
+      </div>
+      <br>
 
 
     <br>
@@ -99,8 +102,16 @@
         @forelse($activity->events as $event)
         <tr>
           <td>{{ $event->name }}</td>
-          <td>{{ $event->start_date }}</td>
-          <td>{{ $event->end_date }}</td>
+          <td>
+            @if($event->start_date!=null)
+            {{ Carbon\Carbon::parse($event->start_date)->format('d/m/Y H:i:s') }}
+            @endif
+          </td>
+          <td>
+            @if($event->start_date!=null)
+            {{ Carbon\Carbon::parse($event->end_date)->format('d/m/Y H:i:s') }}
+            @endif
+          </td>
           <td>{{ $event->total_reservation_quota }}</td>
           <td>{{ $event->confirmed_reservation }}</td>
           <td>{{ $event->leader_name }}</td>
@@ -139,9 +150,9 @@
         timePicker: true,
         startDate: moment().startOf('hour'),
         endDate: moment().startOf('hour').add(24, 'hour'),
-        momentLocale: 'de',
+        momentLocale: 'es',
         locale: {
-          format: 'DD/MM/YYYY   HH:mm:ss'
+          format: 'DD/MM/YYYY HH:mm:ss'
         }
       });
   })
