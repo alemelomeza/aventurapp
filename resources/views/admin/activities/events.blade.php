@@ -28,14 +28,7 @@
       <form class="form" action="/events" method="post">
            {{ csrf_field() }}
            <input type="hidden" name="activity_id" value="{{ $activity->id}}">
-           <div class="col-md-3">
-              <div class="form-group">
-                <label>Nombre del Evento*</label>
-                <input type="text" class="form-control" name="name" required>
-              </div>
-          </div>
-
-          <div class="col-md-4">
+          <div class="col-md-3">
               <div class="form-group">
                 <label>Inicio y Termino (Fecha- Hora):</label>
                 <div class="input-group">
@@ -46,7 +39,6 @@
                 </div>
               </div>
           </div>
-
 
 
           <div class="col-md-2">
@@ -88,7 +80,6 @@
     <table class="datatable table table-striped table-bordered nowrap" cellspacing="0" width="100%">
       <thead>
         <tr>
-          <th>Nombre</th>
           <th>Fecha Inicio</th>
           <th>Fecha Termino</th>
           <th>Total Cupos</th>
@@ -101,7 +92,6 @@
       <tbody>
         @forelse($activity->events as $event)
         <tr>
-          <td>{{ $event->name }}</td>
           <td>
             @if($event->start_date!=null)
             {{ Carbon\Carbon::parse($event->start_date)->format('d/m/Y H:i:s') }}
@@ -152,7 +142,36 @@
         endDate: moment().startOf('hour').add(24, 'hour'),
         momentLocale: 'es',
         locale: {
-          format: 'DD/MM/YYYY HH:mm:ss'
+          format: 'DD/MM/YYYY HH:mm:ss',
+          applyLabel: "Aplicar",
+          cancelLabel: "Cancelar",
+          fromLabel: "Desde",
+          toLabel: "Hasta",
+          customRangeLabel: "Custom",
+          daysOfWeek: [
+                    "Dom",
+                    "Lun",
+                    "Mar",
+                    "Mie",
+                    "Jue",
+                    "Vie",
+                    "Sáb"
+                ],
+          monthNames: [
+              "Enero",
+              "Febrero",
+              "Marzo",
+              "Abril",
+              "Mayo",
+              "Junio",
+              "Julio",
+              "Agosto",
+              "Septiembre",
+              "Octubre",
+              "Noviembre",
+              "Diciembre"
+          ],
+          firstDay: 0
         }
       });
   })

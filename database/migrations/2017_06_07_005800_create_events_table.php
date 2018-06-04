@@ -15,7 +15,6 @@ class CreateEventsTable extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
             $table->datetime('start_date')->nullable();
             $table->datetime('end_date')->nullable();
             $table->integer('total_reservation_quota')->unsigned()->nullable();

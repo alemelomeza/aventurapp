@@ -28,13 +28,18 @@
 
           <li class="{{ Request::is('activities*') ? 'active' : ''}}">
             <a href="/activities">
-              <i class="fa fa-map"></i> <span>Actividades & Eventos</span>
+              <i class="fa fa-map"></i> <span>Actividades & Fechas</span>
             </a>
           </li>
 
+          <li class="{{ Request::is('aplications*') ? 'active' : ''}}">
+            <a href="/aplications">
+              <i class="fa fa-hand-pointer-o"></i> <span>Solicitudes</span>
+            </a>
+          </li>
           <li class="">
-            <a href="#">
-              <i class="fa fa-hand-pointer-o"></i> <span>Participaciones</span>
+            <a href="/participations">
+              <i class="fa fa-flag"></i> <span>Participaciones</span>
             </a>
           </li>
           <li class="treeview">

@@ -38,6 +38,7 @@ Route::group(['middleware' => 'auth'], function () {
       Route::resource('/activities', 'ActivityController');
       Route::get('/activities/{id}/events', 'ActivityController@adminEvents');
       Route::resource('/events', 'EventController');
+      Route::resource('/aplications', 'AplicationController');
     });
 
     Route::group(['middleware' => 'company'], function () {

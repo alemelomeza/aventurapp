@@ -26,7 +26,6 @@ class EventController extends Controller
     {
 
         $this->validate($request, [
-            'name' => 'required',
             'range_date' => 'required',
             'leader_name' => 'required',
             'status' => 'required'
