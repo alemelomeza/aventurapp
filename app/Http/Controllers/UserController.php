@@ -75,4 +75,12 @@ class UserController extends Controller
         $user->delete();
         return redirect('/users');
     }
+
+    public function assingEvent($id)
+    {
+        return view('admin.users.assing_event')
+                              ->with('user', \App\User::find($id))
+                              ->with('companies', \App\Company::all())
+                              ->with('first_company', \App\Company::first());
+    }
 }

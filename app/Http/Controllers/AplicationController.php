@@ -15,13 +15,13 @@ class AplicationController extends Controller
 
     public function create()
     {
-        //
+        return view('admin.aplications.create')->with('companies',\App\Company::all());
     }
 
 
     public function store(Request $request)
     {
-        //
+        
     }
 
 

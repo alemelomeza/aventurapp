@@ -52,6 +52,11 @@
             @endif
           </td>
           <td>
+              @if($user->role == 'normal')
+              <a class="btn btn-warning btn-xs" href="/users/{{$user->id}}/assing_event"  title="Solicitar Participacion en Actividad" style="float:left;margin-right:5px;">
+                <i class="fa fa-hand-pointer-o"></i>
+              </a>
+              @endif
             <a class="btn btn-default btn-xs" href="/users/{{$user->id}}"  title="Ver Detalles" style="float:left;margin-right:5px;">
               <span class="glyphicon glyphicon-eye-open"></span>
             </a>
