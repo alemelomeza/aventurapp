@@ -29,6 +29,8 @@
 @endif
       <form class="form" action="/aplications" method="post">
            {{ csrf_field() }}
+
+           <input type="hidden" name="user_id" value="{{ $user->id }}">
            <div class="col-md-4">
                <div class="form-group">
                    <label>Empresa</label>

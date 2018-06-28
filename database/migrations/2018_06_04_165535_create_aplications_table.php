@@ -15,8 +15,8 @@ class CreateAplicationsTable extends Migration
     {
         Schema::create('aplications', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('reply_message');
-            $table->string('reply');
+            $table->text('reply_message')->nullable();
+            $table->string('reply')->nullable();
             $table->unsignedInteger('user_id')->nullable();
             $table->unsignedInteger('event_id')->index();
             $table->timestamps();

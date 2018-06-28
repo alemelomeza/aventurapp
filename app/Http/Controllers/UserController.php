@@ -83,4 +83,6 @@ class UserController extends Controller
                               ->with('companies', \App\Company::all())
                               ->with('first_company', \App\Company::first());
     }
+
+
 }

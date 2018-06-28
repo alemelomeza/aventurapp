@@ -21,8 +21,6 @@
       Lista
     </div>
     <div class="box-body">
-    <a href="/aplications/create" class="btn btn-success pull-right" name="button"><i class="fa fa-plus"></i> Crear Nuevo</a>
-    <br>
     <br>
     <table class="datatable table table-striped table-bordered nowrap" cellspacing="0" width="100%">
       <thead>
@@ -40,11 +38,11 @@
         @forelse($aplications as $aplication)
         <tr>
           <td>{{ $aplication->created_at }}</td>
-          <td>{{ $aplication->event->activity->name }}</td>
+          <td>{{ $aplication->event->activity->title }}</td>
           <td>{{ $aplication->event->start_date }}</td>
           <td>{{ $aplication->user->name  }}</td>
-          <td>${{ $aplication->reply }}</td>
-          <td>${{ $aplication->reply_message }}</td>
+          <td>{{ $aplication->reply }}</td>
+          <td>{{ $aplication->reply_message }}</td>
 
           <td>
 
@@ -65,7 +63,6 @@
           </td>
         </tr>
         @empty
-        <span>sin registros aun</span>
         @endforelse
       </tbody>
     </table>

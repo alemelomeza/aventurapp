@@ -21,7 +21,8 @@ class AplicationController extends Controller
 
     public function store(Request $request)
     {
-        
+        $aplicacion = Aplication::create($request->all());
+        return redirect('/aplications');
     }
 
 
