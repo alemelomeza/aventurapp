@@ -15,16 +15,17 @@
               <i class="fa fa-home"></i> <span>Home</span>
             </a>
           </li>
-          <li class="{{ Request::is('companies*') ? 'active' : ''}}">
-            <a href="/companies">
-              <i class="fa fa-building"></i> <span>Empresas</span>
-            </a>
-          </li>
           <li class="{{ Request::is('users*') ? 'active' : ''}}">
             <a href="/users">
               <i class="fa fa-users"></i> <span>Usuarios</span>
             </a>
           </li>
+          <li class="{{ Request::is('companies*') ? 'active' : ''}}">
+            <a href="/companies">
+              <i class="fa fa-building"></i> <span>Empresas</span>
+            </a>
+          </li>
+
 
           <li class="{{ Request::is('activities*') ? 'active' : ''}}">
             <a href="/activities">

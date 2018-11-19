@@ -76,6 +76,16 @@
                 <input type="text" class="form-control" name="video_path" >
               </div>
           </div>
+          <div class="col-md-2">
+              <div class="form-group">
+                <label>Usuario Asociado <i class="fa fa-user"></i></label>
+                  <select class="form-control"  name="user_id" required>
+                    @foreach($users as $user)
+                    <option value="{{ $user->id }}">{{ $user->name }}</option>
+                    @endforeach
+                  </select>
+              </div>
+          </div>
 
           <div class="col-md-4">
             <label><strong>Subir & Editar Logo </strong></label><br>
