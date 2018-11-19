@@ -44,10 +44,6 @@
             @if($user->role == 'company')
               @if($user->company)
               - ( <strong>{{$user->company->name}}</strong>  )
-              @else
-              <a class="btn btn-warning btn-xs" href="/users/{{$user->id}}/assing_company"  title="Asignar Empresa" style="">
-                <i class="fa fa-building"></i>
-              </a>
               @endif
             @endif
           </td>
